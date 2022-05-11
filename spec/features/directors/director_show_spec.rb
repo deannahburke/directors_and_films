@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the directors show page' do  
+RSpec.describe 'the directors show page' do
   # As a visitor
   # When I visit '/parents/:id'
   # Then I see the parent with that id including the parent's attributes:
