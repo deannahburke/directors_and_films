@@ -1,2 +1,2 @@
 class Director < ApplicationRecord
-end 
+end
