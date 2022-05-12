@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the directors index page' do
+RSpec.describe 'the directors index page', type: :feature do
   # For each parent table
   # As a visitor
   # When I visit '/parents'

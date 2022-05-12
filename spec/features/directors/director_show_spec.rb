@@ -8,7 +8,7 @@ RSpec.describe 'the directors show page' do
   it 'displays the director id and attributes' do
     director = Director.create(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
     visit "/directors/#{director.id}"
-
+    
     expect(page).to have_content(director.name)
     expect(page).to have_content(director.birthdate)
     expect(page).to have_content(director.hometown)
