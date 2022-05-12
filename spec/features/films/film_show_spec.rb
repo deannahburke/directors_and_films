@@ -9,12 +9,12 @@ RSpec.describe 'the films show page', type: :feature do
     film = director.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24', director_id: 1)
     visit "/films/#{film.id}"
 
-    expect(page).to have_content(film.title)
-    expect(page).to have_content(film.oscar_nominated)
-    expect(page).to have_content(film.oscar_wins)
-    expect(page).to have_content(film.budget)
-    expect(page).to have_content(film.revenue)
-    expect(page).to have_content(film.release_date)
+    expect(page).to have_content('Get Out')
+    expect(page).to have_content(true)
+    expect(page).to have_content(0)
+    expect(page).to have_content(2000000)
+    expect(page).to have_content(3000000)
+    expect(page).to have_content('2017-02-24')
   end
 
 end
