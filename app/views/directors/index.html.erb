@@ -1,4 +1,8 @@
-<h1>Directors</h1>
-<% @directors.each do |dir| %>
-  <p><%= dir.name %></p>
-<% end %>
+<a href="/directors">Director Index</a>
+<%= link_to "Films Index", "/films" %>
+
+<h1><b>Directors</b></h1>
+  <% @directors.each do |dir| %>
+    <p><b><%= dir.name %></b></p>
+    <p><%= dir.created_at %></p>
+  <% end %>

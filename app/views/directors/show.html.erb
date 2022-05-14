@@ -1,4 +1,6 @@
 <a href="/directors">Director Index</a>
+<%= link_to "Films Index", "/films" %>
+<p><%= link_to "#{@director.name}'s Films", "/directors/#{@director.id}/films" %></p>
 
 <h3><%= @director.name %></h3>
 
@@ -6,3 +8,5 @@
   <p>Hometown: <%= @director.hometown %></p>
   <p>Active? <%= @director.active %></p>
   <p>IMDB Rating: <%= @director.imdb_rating %></p>
+
+<p>Films by <%= @director.name %>: <%= @director.count_films %></p>
