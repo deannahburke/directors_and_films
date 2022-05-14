@@ -7,4 +7,6 @@ class Director < ApplicationRecord
     order(created_at: :desc)
   end
 
+  def count_films
+  end 
 end
