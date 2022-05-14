@@ -8,5 +8,7 @@ class Director < ApplicationRecord
   end
 
   def count_films
-  end 
+    films.count
+  end
+
 end

@@ -21,12 +21,13 @@ RSpec.describe 'the directors show page', type: :feature do
     # I see a count of the number of children associated with this parent
     it 'displays the count of films associated with the director' do
       director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
-      visit "/directors/#{director.id}"
 
       film_1 = director.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24', director_id: 1)
 
       film_2 = director.films.create!(title: 'Us', oscar_nominated: false, oscar_wins: 0, budget: 2750000, revenue: 2800000, release_date: '2019-03-22', director_id: 1)
 
-      expect(page).to have_content("Films by this director: 2")
+      visit "/directors/#{director.id}"
+      
+      expect(page).to have_content("Films by Jordan Peele: 2")
   end
 end
