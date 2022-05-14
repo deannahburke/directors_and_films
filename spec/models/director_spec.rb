@@ -16,7 +16,7 @@ RSpec.describe Director, type: :model do
   describe 'instance methods' do
     describe '#most_recently_created' do
         it 'returns Directors index sorted by most recently created' do
-            director_1 = Director.create!(name: 'Luke Swenson', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
+            director_1 = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 
             director_2 = Director.create!(name: 'Chloe Zhao', birthdate: '1982-03-31', hometown: 'Bejing', active: true, imdb_rating: 20)
 
