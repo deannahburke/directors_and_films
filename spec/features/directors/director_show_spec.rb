@@ -36,11 +36,39 @@ RSpec.describe 'the directors show page', type: :feature do
   # Then I see a link at the top of the page that takes me to the Child Index
   it 'links to films index page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
-    
+
     visit "/directors/#{director.id}"
 
     click_on "Films Index"
 
     expect(current_path).to eq("/films")
+  end
+
+  # As a visitor
+  # When I visit any page on the site
+  # Then I see a link at the top of the page that takes me to the Parent Index
+  it 'has a link to the director index page' do
+    director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
+
+    visit "/directors/#{director.id}"
+
+    click_on "Director Index"
+
+    expect(current_path).to eq("/directors")
+  end
+
+  # As a visitor
+  # When I visit a parent show page ('/parents/:id')
+  # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
+
+  it 'has a link to each directors films' do
+    director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
+    film = director.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24', director_id: 1)
+
+    visit "/directors/#{director.id}"
+
+    click_on "#{director.name}'s Films"
+
+    expect(current_path).to eq("/directors/#{director.id}/films")
   end
 end

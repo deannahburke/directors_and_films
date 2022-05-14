@@ -19,11 +19,22 @@ RSpec.describe 'the films index page', type: :feature do
   # As a visitor
   # When I visit any page on the site
   # Then I see a link at the top of the page that takes me to the Child Index
-  it 'links to films page' do
+  it 'links to films index page' do
     visit "/films"
 
     click_on "Films Index"
 
     expect(current_path).to eq("/films")
+  end
+
+  # As a visitor
+  # When I visit any page on the site
+  # Then I see a link at the top of the page that takes me to the Parent Index
+  it 'links to the director index page' do
+    visit "/films"
+
+    click_on "Director Index"
+
+    expect(current_path).to eq("/directors")
   end
 end
