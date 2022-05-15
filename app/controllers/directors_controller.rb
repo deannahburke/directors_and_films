@@ -8,5 +8,11 @@ class DirectorsController < ApplicationController
   end
 
   def new
-  end 
+  end
+
+  def create
+    director = Director.create!(name: params[:name], birthdate: params[:birthdate], hometown: params[:hometown], active: params[:active], imdb_rating: params[:rating])
+
+    redirect_to '/directors'
+  end
 end
