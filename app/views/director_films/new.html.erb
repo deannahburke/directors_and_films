@@ -1,0 +1,15 @@
+<%= form_with url: "/directors/#{@director.id}/films", method: :post, local: true do |form| %>
+  <%=form.label :title %>
+  <%=form.text_field :title %>
+  <%=form.label :oscar_nominated %>
+  <%=form.select :oscar_nominated, ["True", "False"] %>
+  <%=form.label :oscar_wins %>
+  <%=form.number_field :oscar_wins %>
+  <%=form.label :budget %>
+  <%=form.number_field :budget %>
+  <%=form.label :revenue %>
+  <%=form.number_field :revenue %>
+  <%=form.label :release_date %>
+  <%=form.text_field :release_date %>
+  <%=form.submit "Add Film" %>
+<% end %>
