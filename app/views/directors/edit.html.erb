@@ -7,8 +7,8 @@
   <%= form.label :hometown %>
   <%= form.text_field :hometown %>
   <%= form.label :active? %>
-  <%= form.text_field :active? %>
-  <%= form.label :rating %>
-  <%= form.text_field :rating %>
+  <%= form.select :active?, ["True", "False"] %>
+  <%= form.label :imdb_rating %>
+  <%= form.number_field :imdb_rating %>
   <%= form.submit "Update Director" %>
 <% end %>
