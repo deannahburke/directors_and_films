@@ -33,7 +33,7 @@ RSpec.describe 'the director edit' do
     fill_in 'Name', with: 'Jordan Peele'
     fill_in 'Birthdate', with: '1979-02-21'
     fill_in 'Hometown', with: 'New York'
-    fill_in 'Active?', with: 'true'
+    select 'True', from: 'Active?'
     fill_in 'Imdb rating', with: '13'
     click_button 'Update Director'
 

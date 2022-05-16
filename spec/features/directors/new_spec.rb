@@ -26,7 +26,7 @@ RSpec.describe 'the Director creation' do
     fill_in('Name', with: 'Spike Lee')
     fill_in('Birthdate', with: '1957-03-20')
     fill_in('Hometown', with: 'Atlanta')
-    fill_in('Active?', with: 'True')
+    select('True', from: 'Active?')
     fill_in('Imdb rating', with: '5')
     click_button('Create Director')
 
