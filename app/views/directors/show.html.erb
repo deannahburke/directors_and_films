@@ -1,6 +1,7 @@
 <a href="/directors">Director Index</a>
 <%= link_to "Films Index", "/films" %>
 <p><%= link_to "#{@director.name}'s Films", "/directors/#{@director.id}/films" %></p>
+<p><%= link_to "Update #{@director.name}", "/directors/#{@director.id}/edit" %></p>
 
 <h3><%= @director.name %></h3>
 
