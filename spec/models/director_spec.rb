@@ -22,6 +22,7 @@ RSpec.describe Director, type: :model do
       director_3 = Director.create!(name: 'Alfred Hitchcock', birthdate: '1899-08-13', hometown: 'London', active: false, imdb_rating: 3)
 
       expect(Director.most_recently_created.to_a).to eq([director_3, director_2, director_1])
+      expect(Director.most_recently_created.to_a).to_not eq([director_1, director_2, director_3])
     end
 
     it 'shows number of films made by director' do

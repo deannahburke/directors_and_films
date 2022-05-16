@@ -27,7 +27,7 @@ RSpec.describe 'the Director creation' do
     fill_in('Birthdate', with: '1957-03-20')
     fill_in('Hometown', with: 'Atlanta')
     fill_in('Active?', with: 'True')
-    fill_in('Rating', with: '5')
+    fill_in('Imdb rating', with: '5')
     click_button('Create Director')
 
     expect(current_path).to eq('/directors')

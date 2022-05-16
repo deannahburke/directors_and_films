@@ -11,13 +11,7 @@ class DirectorsController < ApplicationController
   end
 
   def create
-    director = Director.create!(
-      name: params[:name],
-      birthdate: params[:birthdate],
-      hometown: params[:hometown],
-      active: params[:active],
-      imdb_rating: params[:rating])
-
+    director = Director.create!(director_params)
     redirect_to '/directors'
   end
 
@@ -27,13 +21,12 @@ class DirectorsController < ApplicationController
 
   def update
     @director = Director.find(params[:id])
-    @director.update!(
-      name: params[:name],
-      birthdate: params[:birthdate],
-      hometown: params[:hometown],
-      active: params[:active],
-      imdb_rating: params[:rating])
-
+    @director.update!(director_params)
     redirect_to "/directors/#{@director.id}"
   end
+
+  private
+    def director_params
+      params.permit(:name, :birthdate, :hometown, :active, :imdb_rating)
+    end
 end
