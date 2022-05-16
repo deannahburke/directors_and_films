@@ -24,4 +24,16 @@ class DirectorsController < ApplicationController
   def edit
     @director = Director.find(params[:id])
   end
+
+  def update
+    @director = Director.find(params[:id])
+    @director.update!(
+      name: params[:name],
+      birthdate: params[:birthdate],
+      hometown: params[:hometown],
+      active: params[:active],
+      imdb_rating: params[:rating])
+
+    redirect_to "/directors/#{@director.id}"
+  end
 end

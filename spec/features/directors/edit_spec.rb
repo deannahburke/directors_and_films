@@ -30,8 +30,6 @@ RSpec.describe 'the director edit' do
 
     click_link "Update Jordan Peal"
 
-    # visit "/directors/#{director.id}/edit"
-
     fill_in 'Name', with: 'Jordan Peele'
     fill_in 'Birthdate', with: '1979-02-21'
     fill_in 'Hometown', with: 'New York'
