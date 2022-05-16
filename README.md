@@ -1,9 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+# Directors and Films - a Relational Rails Project 
 
 * Ruby version
 
@@ -21,4 +16,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+<img width="829" alt="Schema screenshot" src="https://user-images.githubusercontent.com/98491210/168607683-4a760228-fc51-4e75-9675-e8a8ac50d950.png">
