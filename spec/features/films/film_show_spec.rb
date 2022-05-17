@@ -42,5 +42,5 @@ RSpec.describe 'the films show page', type: :feature do
     click_on "Director Index"
 
     expect(current_path).to eq("/directors")
-  end
+  end  
 end

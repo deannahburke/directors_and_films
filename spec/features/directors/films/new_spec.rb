@@ -11,10 +11,10 @@ require 'rails_helper'
 # a new child object/row is created for that parent,
 # and I am redirected to the Parent Childs Index page where I can see the new child listed
 
-RSpec.describe 'the Film creation', type: :feature do
+RSpec.describe 'the director films creation', type: :feature do
   it 'links to new film page from directors films index' do
     jordan = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
-    
+
     visit "/directors/#{jordan.id}/films"
 
     click_link "Add Film"
