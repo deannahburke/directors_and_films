@@ -4,6 +4,7 @@
 <h1>All Films</h1>
   <% @films.each do |film| %>
   <h3>Title: <%=link_to film.title, "/films/#{film.id}" %></h3>
+  <%=link_to "Edit #{film.title}", "/films/#{film.id}/edit" %>
   <p>Oscar nominated? <%= film.oscar_nominated %></p>
   <p>Oscar wins: <%= film.oscar_wins %></p>
   <p>Budget: <%= film.budget %></p>
