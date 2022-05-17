@@ -16,7 +16,6 @@ RSpec.describe 'delete parent record' do
 
     get_out = jordan.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24')
 
-
     visit "/directors/#{jordan.id}"
 
     click_link "Delete #{jordan.name}"
@@ -25,5 +24,6 @@ RSpec.describe 'delete parent record' do
 
     expect(page).to_not have_content('Jordan Peele')
     expect(page).to have_content('Chloe Zhao')
+    expect(current_path).to eq("/directors")
   end
-end 
+end
