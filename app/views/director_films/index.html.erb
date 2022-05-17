@@ -10,3 +10,5 @@
   <p>Revenue: <%= film.revenue %></p>
   <p>Release Date: <%= film.release_date %></p>
 <% end %>
+
+<%= link_to "Alphabetize Films", "/directors/#{@director.id}/films/?ordered=alphabetical" %>

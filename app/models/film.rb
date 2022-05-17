@@ -7,4 +7,8 @@ class Film < ApplicationRecord
     where(oscar_nominated: true)
   end
 
+  def self.alphabetize
+    order(:title)
+  end
+
 end
