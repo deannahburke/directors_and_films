@@ -2,7 +2,7 @@
 <%= link_to "Films Index", "/films" %>
 
 <h3><%= @film.title %></h3>
-
+<%= link_to "Update #{@film.title}", "/films/#{@film.id}/edit" %>
 <p>Oscar nominated? <%= @film.oscar_nominated %></p>
 <p>Oscar wins: <%= @film.oscar_wins %></p>
 <p>Budget: <%= @film.budget %></p>

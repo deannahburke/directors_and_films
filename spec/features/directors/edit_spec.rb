@@ -10,7 +10,7 @@ require 'rails_helper'
 # the parent's info is updated,
 # and I am redirected to the Parent's Show page where I see the parent's updated info
 
-RSpec.describe 'the director edit' do
+RSpec.describe 'the director edit', type: :feature do
   it 'links to the edit page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 
@@ -30,12 +30,12 @@ RSpec.describe 'the director edit' do
 
     click_link "Update Jordan Peal"
 
-    fill_in 'Name', with: 'Jordan Peele'
-    fill_in 'Birthdate', with: '1979-02-21'
-    fill_in 'Hometown', with: 'New York'
-    select 'True', from: 'Active?'
-    fill_in 'Imdb rating', with: '13'
-    click_button 'Update Director'
+    fill_in('Name', with: 'Jordan Peele')
+    fill_in('Birthdate', with: '1979-02-21')
+    fill_in('Hometown', with: 'New York')
+    select('True', from: 'Active?')
+    fill_in('Imdb rating', with: '13')
+    click_button('Update Director')
 
     expect(current_path).to eq("/directors/#{director.id}")
     expect(page).to have_content('Jordan Peele')

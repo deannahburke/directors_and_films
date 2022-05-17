@@ -11,7 +11,7 @@ require 'rails_helper'
 # a new parent record is created,
 # and I am redirected to the Parent Index page where I see the new Parent displayed.
 
-RSpec.describe 'the Director creation', type: :feature do
+RSpec.describe 'the director creation', type: :feature do
   it 'links to the new page from the directors index' do
     visit '/directors'
 
