@@ -6,5 +6,6 @@
 <h1><b>Directors</b></h1>
   <% @directors.each do |dir| %>
     <p><b><%=link_to dir.name, "/directors/#{dir.id}" %></b></p>
+    <p><%= link_to "Edit #{dir.name}", "/directors/#{dir.id}/edit" %></p>
     <p><%= dir.created_at %></p>
   <% end %>
