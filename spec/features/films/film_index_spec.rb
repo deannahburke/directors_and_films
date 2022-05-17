@@ -37,4 +37,24 @@ RSpec.describe 'the films index page', type: :feature do
 
     expect(current_path).to eq("/directors")
   end
+
+  # As a visitor
+  # When I visit the child index
+  # Then I only see records where the boolean column is `true`
+  it 'displays only oscar nominated films' do
+    director_1 = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
+
+    film_1 = director_1.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24')
+
+    film_2 = director_1.films.create!(title: 'Us', oscar_nominated: false, oscar_wins: 0, budget: 2750000, revenue: 2800000, release_date: '2019-03-22')
+
+    film_3 = director_1.films.create!(title: 'Nope', oscar_nominated: true, oscar_wins: 0, budget: 1500000, revenue: 37500000, release_date: '2022-05-18')
+
+    visit "/films"
+
+    expect(page).to have_content('Get Out')
+    expect(page).to have_content('Nope')
+    expect(page).to_not have_content('Us')
+  end
+
 end
