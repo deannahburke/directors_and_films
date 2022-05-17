@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/films/:id', to: 'films#show'
   get '/films/:id/edit', to: 'films#edit'
   patch '/films/:id', to: 'films#update'
+  delete '/films/:id', to: 'films#destroy'
 
   get '/directors/:director_id/films', to: 'director_films#index'
   get '/directors/:director_id/films/new', to: 'director_films#new'
