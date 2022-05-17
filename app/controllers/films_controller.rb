@@ -1,6 +1,6 @@
 class FilmsController < ApplicationController
   def index
-    @films = Film.all
+    @films = Film.all.oscar_nod
   end
 
   def show
