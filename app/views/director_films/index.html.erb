@@ -3,6 +3,7 @@
 <%= link_to "Add Film", "/directors/#{@director.id}/films/new"  %>
 
 <% @films.each do |film| %>
+<%= link_to "Edit #{film.title}", "/films/#{film.id}/edit" %>
   <h3>Title: <%= film.title %></h3>
   <p>Oscar nominated? <%= film.oscar_nominated %></p>
   <p>Oscar wins: <%= film.oscar_wins %></p>
@@ -11,4 +12,4 @@
   <p>Release Date: <%= film.release_date %></p>
 <% end %>
 
-<%= link_to "Alphabetize Films", "/directors/#{@director.id}/films/?ordered=alphabetical" %>
+<%= link_to "Alphabetize Films", sort: "alphabetical" %>

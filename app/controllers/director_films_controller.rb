@@ -1,7 +1,7 @@
 class DirectorFilmsController < ApplicationController
   def index
    @director = Director.find(params[:director_id])
-    if params[:ordered]
+    if params[:sort] == "alphabetical"
       @films = @director.films.alphabetize
     else
       @films = @director.films

@@ -21,7 +21,7 @@ RSpec.describe 'the directors index page', type: :feature do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
     visit "/directors"
 
-    expect(page).to have_content(director.created_at)
+    expect(page).to have_content(director.created_at.strftime("%m-%e-%y %H:%M"))
   end
 
   # As a visitor
@@ -50,7 +50,7 @@ RSpec.describe 'the directors index page', type: :feature do
   # When I visit the parent index page
   # Next to every parent, I see a link to edit that parent's info
   # When I click the link
-  # I should be taken to that parents edit page where I can update its information just like in User Story 4
+  # I should be taken to that parents edit page where I can update its information
   it 'links to the edit page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 
