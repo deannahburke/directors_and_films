@@ -1,6 +1,6 @@
 <%= link_to "Director Index", "/directors" %>
 <%= link_to "Films Index", "/films" %>
-<%= link_to "Add Film", "/directors/#{@director.id}/films/new"  %>
+<%= link_to "Add Film", "/directors/#{@director.id}/films/new" %>
 
 <% @films.each do |film| %>
 <%= link_to "Edit #{film.title}", "/films/#{film.id}/edit" %>

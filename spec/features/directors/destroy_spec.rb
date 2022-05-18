@@ -9,6 +9,7 @@ RSpec.describe 'delete parent record' do
   # Then a 'DELETE' request is sent to '/parents/:id',
   # the parent is deleted, and all child records are deleted
   # and I am redirected to the parent index page where I no longer see this parent
+  
   it 'can delete a director from the director show page' do
     jordan = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 

@@ -10,5 +10,5 @@
   <p>Budget: <%= film.budget %></p>
   <p>Revenue: <%= film.revenue %></p>
   <p>Release Date: <%= film.release_date %></p>
-  <%= link_to "Delete #{film.title}", "/films/#{film.id}", method: :delete %></p>
+  <p><%= link_to "Delete #{film.title}", "/films/#{film.id}", method: :delete %></p>
 <% end %>

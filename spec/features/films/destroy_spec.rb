@@ -8,6 +8,7 @@ RSpec.describe 'delete child record' do
   # Then a 'DELETE' request is sent to '/child_table_name/:id',
   # the child is deleted,
   # and I am redirected to the child index page where I no longer see this child
+  
   it 'can delete a film record' do
     jordan = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 

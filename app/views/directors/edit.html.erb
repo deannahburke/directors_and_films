@@ -1,14 +1,14 @@
 <%= form_with url: "/directors/#{@director.id}", method: :patch, local: true do |form| %>
 
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :birthdate %>
-  <%= form.text_field :birthdate %>
-  <%= form.label :hometown %>
-  <%= form.text_field :hometown %>
-  <%= form.label :active? %>
-  <%= form.select :active?, ["True", "False"] %>
-  <%= form.label :imdb_rating %>
-  <%= form.number_field :imdb_rating %>
-  <%= form.submit "Update Director" %>
+  <p><%= form.label :name %></p>
+  <p><%= form.text_field :name %></p>
+  <p><%= form.label :birthdate %></p>
+  <p><%= form.text_field :birthdate %></p>
+  <p><%= form.label :hometown %></p>
+  <p><%= form.text_field :hometown %></p>
+  <p><%= form.label :active? %></p>
+  <p><%= form.select :active?, ["True", "False"] %></p></p>
+  <p><%= form.label :imdb_rating %></p>
+  <p><%= form.number_field :imdb_rating %></p>
+  <p><%= form.submit "Update Director" %></p>
 <% end %>

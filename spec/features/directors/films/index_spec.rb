@@ -4,6 +4,7 @@ RSpec.describe 'the director films index page', type: :feature do
   # As a visitor
   # When I visit '/parents/:parent_id/child_table_name'
   # Then I see each Child that is associated with that Parent with each Child's attributes:
+
   it 'displays the films associated with each director and each films attributes' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
     film = director.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24', director_id: 1)
@@ -21,6 +22,7 @@ RSpec.describe 'the director films index page', type: :feature do
   # As a visitor
   # When I visit any page on the site
   # Then I see a link at the top of the page that takes me to the Child Index
+
   it 'links to films index page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
     film = director.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24', director_id: 1)
@@ -35,6 +37,7 @@ RSpec.describe 'the director films index page', type: :feature do
   # As a visitor
   # When I visit any page on the site
   # Then I see a link at the top of the page that takes me to the Parent Index
+
   it 'links to director index page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
     film = director.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24', director_id: 1)
@@ -51,6 +54,7 @@ RSpec.describe 'the director films index page', type: :feature do
   # Then I see a link to sort children in alphabetical order
   # When I click on the link
   # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+
   it 'has link to alphabetize films' do
     director_1 = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 

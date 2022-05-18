@@ -4,7 +4,6 @@ class DirectorFilmsController < ApplicationController
     if params[:sort] == "alphabetical"
       @films = @director.films.alphabetize
     elsif params[:oscar_wins]
-      
       @films = @director.films.wins_over_threshold(params[:oscar_wins])
     else
       @films = @director.films

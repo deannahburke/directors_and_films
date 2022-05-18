@@ -5,6 +5,7 @@ RSpec.describe 'the directors show page', type: :feature do
   # When I visit '/parents/:id'
   # Then I see the parent with that id including the parent's attributes:
   # - data from each column that is on the parent table
+
   it 'displays the director id and attributes' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
     visit "/directors/#{director.id}"
@@ -19,6 +20,7 @@ RSpec.describe 'the directors show page', type: :feature do
   # As a visitor
   # When I visit a parent's show page
   # I see a count of the number of children associated with this parent
+
   it 'displays the count of films associated with the director' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 
@@ -34,6 +36,7 @@ RSpec.describe 'the directors show page', type: :feature do
   # As a visitor
   # When I visit any page on the site
   # Then I see a link at the top of the page that takes me to the Child Index
+
   it 'links to films index page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 
@@ -47,6 +50,7 @@ RSpec.describe 'the directors show page', type: :feature do
   # As a visitor
   # When I visit any page on the site
   # Then I see a link at the top of the page that takes me to the Parent Index
+  
   it 'has a link to the director index page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 
