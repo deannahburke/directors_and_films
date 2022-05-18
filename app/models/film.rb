@@ -12,7 +12,7 @@ class Film < ApplicationRecord
   end
 
   def self.wins_over_threshold(quantity)
-    where("oscar_wins >= #{quantity}")
+    where("oscar_wins > #{quantity}")
   end
 
 end

@@ -71,7 +71,7 @@ RSpec.describe 'the director films index page', type: :feature do
   # When I visit the `child_table_name` index page or a parent `child_table_name` index page
   # Next to every child, I see a link to edit that child's info
   # When I click the link
-  # I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 11
+  # I should be taken to that `child_table_name` edit page where I can update its information
 
   it 'links to the film edit page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
@@ -110,6 +110,6 @@ RSpec.describe 'the director films index page', type: :feature do
     expect(page).to have_content('Nope')
     expect(page).to_not have_content('Us')
 
-    expect(current_path).to eq()
+    expect(current_path).to eq("/directors/#{director_1.id}/films")
   end
 end

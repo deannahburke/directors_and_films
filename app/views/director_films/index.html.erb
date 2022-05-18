@@ -13,3 +13,9 @@
 <% end %>
 
 <%= link_to "Alphabetize Films", sort: "alphabetical" %>
+
+<%= form_with url: "/directors/#{@director.id}/films/", method: :get, local: true do |form| %>
+  <%= form.label :oscar_wins, "Oscar Wins" %>
+  <%= form.number_field :oscar_wins %>
+  <%= form.submit "Only show films with more than this many Oscar wins!" %>
+<% end %>
