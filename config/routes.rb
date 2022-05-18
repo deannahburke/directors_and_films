@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   patch '/directors/:id/', to: 'directors#update'
   delete '/directors/:id', to: 'directors#destroy'
   
-
   get '/films', to: 'films#index'
   get '/films/:id', to: 'films#show'
   get '/films/:id/edit', to: 'films#edit'
