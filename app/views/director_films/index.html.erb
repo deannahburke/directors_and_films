@@ -10,6 +10,13 @@
   <p>Budget: <%= film.budget %></p>
   <p>Revenue: <%= film.revenue %></p>
   <p>Release Date: <%= film.release_date %></p>
+  <p><%= link_to "Delete #{film.title}", "/films/#{film.id}", method: :delete %></p>
 <% end %>
 
 <%= link_to "Alphabetize Films", sort: "alphabetical" %>
+
+<br><%= form_with url: "/directors/#{@director.id}/films/", method: :get, local: true do |form| %><br>
+  <%= form.label :oscar_wins, "Oscar Wins" %>
+  <%= form.number_field :oscar_wins %>
+  <%= form.submit "Only show films with more than this many Oscar wins!" %>
+<% end %>

@@ -71,7 +71,7 @@ RSpec.describe 'the director films index page', type: :feature do
   # When I visit the `child_table_name` index page or a parent `child_table_name` index page
   # Next to every child, I see a link to edit that child's info
   # When I click the link
-  # I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 11
+  # I should be taken to that `child_table_name` edit page where I can update its information
 
   it 'links to the film edit page' do
     director = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
@@ -94,7 +94,7 @@ RSpec.describe 'the director films index page', type: :feature do
   it 'has a form to filter number of oscar wins' do
     director_1 = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
 
-    film_1 = director_1.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 2, budget: 2000000, revenue: 3000000, release_date: '2017-02-24')
+    film_1 = director_1.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 4, budget: 2000000, revenue: 3000000, release_date: '2017-02-24')
 
     film_2 = director_1.films.create!(title: 'Us', oscar_nominated: false, oscar_wins: 0, budget: 2750000, revenue: 2800000, release_date: '2019-03-22')
 
@@ -110,6 +110,31 @@ RSpec.describe 'the director films index page', type: :feature do
     expect(page).to have_content('Nope')
     expect(page).to_not have_content('Us')
 
-    expect(current_path).to eq()
+    expect(current_path).to eq("/directors/#{director_1.id}/films/")
+  end
+
+  # As a visitor
+  # When I visit the `child_table_name` index page or a parent `child_table_name` index page
+  # Next to every child, I see a link to delete that child
+  # When I click the link
+  # I should be taken to the `child_table_name` index page where I no longer see that child
+
+  it 'has a link to delete a film' do
+    director_1 = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
+
+    film_1 = director_1.films.create!(title: 'Get Out', oscar_nominated: true, oscar_wins: 0, budget: 2000000, revenue: 3000000, release_date: '2017-02-24')
+
+    film_2 = director_1.films.create!(title: 'Us', oscar_nominated: true, oscar_wins: 0, budget: 2750000, revenue: 2800000, release_date: '2019-03-22')
+
+    film_3 = director_1.films.create!(title: 'Nope', oscar_nominated: true, oscar_wins: 0, budget: 1500000, revenue: 37500000, release_date: '2022-05-18')
+
+    visit "/directors/#{director_1.id}/films"
+
+    click_link "Delete #{film_3.title}"
+
+    expect(page).to_not have_content('Nope')
+    expect(page).to have_content('Get Out')
+    expect(page).to have_content('Us')
+    expect(current_path).to eq("/films")
   end
 end

@@ -8,4 +8,5 @@
     <p><b><%=link_to dir.name, "/directors/#{dir.id}" %></b></p>
     <p><%= link_to "Edit #{dir.name}", "/directors/#{dir.id}/edit" %></p>
     <p><%= dir.created_at.strftime("%m-%e-%y %H:%M") %></p>
+    <p><%= link_to "Delete #{dir.name}", "/directors/#{dir.id}", method: :delete %></p>
   <% end %>
