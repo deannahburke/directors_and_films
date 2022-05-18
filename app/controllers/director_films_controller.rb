@@ -3,7 +3,7 @@ class DirectorFilmsController < ApplicationController
    @director = Director.find(params[:director_id])
     if params[:sort] == "alphabetical"
       @films = @director.films.alphabetize
-    # elsif params[:quantity]
+    # elsif params[:number]
     #   @films = @director.films.wins_over_threshold
     else
       @films = @director.films

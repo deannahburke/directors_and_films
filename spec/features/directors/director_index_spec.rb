@@ -60,4 +60,24 @@ RSpec.describe 'the directors index page', type: :feature do
 
     expect(current_path).to eq("/directors/#{director.id}/edit")
   end
+
+  # As a visitor
+  # When I visit the parent index page
+  # Next to every parent, I see a link to delete that parent
+  # When I click the link
+  # I am returned to the Parent Index Page where I no longer see that parent
+
+  it 'has a link to delete director' do
+    director_1 = Director.create!(name: 'Jordan Peele', birthdate: '1979-02-21', hometown: 'New York', active: true, imdb_rating: 16)
+
+    director_2 = Director.create!(name: 'Chloe Zhao', birthdate: '1984-03-31', hometown: 'Beijing', active: true, imdb_rating: 3)
+
+    visit "/directors"
+
+    click_link "Delete #{director_1.name}"
+
+    expect(page).to_not have_content('Jordan Peele')
+    expect(page).to have_content('Chloe Zhao')
+    expect(current_path).to eq("/directors")
+  end
 end
