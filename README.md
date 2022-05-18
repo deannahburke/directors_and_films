@@ -1,19 +1,10 @@
 # Directors and Films - a Relational Rails Project 
+Create, read, update, and delete directors and their films on your local host server!
 
-* Ruby version
+Type `rails s` in your command line to get started, then visit [this link](http://localhost:3000/directors)!
 
-* System dependencies
+* Ruby version 2.7.4
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Rails version 5.2.8
 
 <img width="829" alt="Schema screenshot" src="https://user-images.githubusercontent.com/98491210/168607683-4a760228-fc51-4e75-9675-e8a8ac50d950.png">
