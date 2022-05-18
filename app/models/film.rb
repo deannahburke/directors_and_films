@@ -11,4 +11,8 @@ class Film < ApplicationRecord
     order(:title)
   end
 
+  def self.wins_over_threshold(quantity)
+    where("oscar_wins >= #{quantity}")
+  end
+
 end
